@@ -18,7 +18,7 @@ const curOptions = {
   maximumAge: 0, // Do not use a cached position
 };
 
-// navigator.geolocation.getCurrentPosition(curSuccess, curError, curOptions);
+navigator.geolocation.getCurrentPosition(curSuccess, curError, curOptions);
 
 // watchPosition()
 const target = {
