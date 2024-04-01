@@ -1,77 +1,214 @@
+function styleItem(
+  item,
+  bColor,
+  width,
+  height,
+  bRadius,
+  position,
+  display,
+  justify,
+  align,
+  zIndex,
+  top,
+  left,
+  tOrigin,
+  margin,
+  transform
+) {
+  return (
+    bColor ? (item.style.backgroundColor = bColor) : null,
+    width ? (item.style.width = width) : null,
+    height ? (item.style.height = height) : null,
+    bRadius ? (item.style.borderRadius = bRadius) : null,
+    position ? (item.style.position = position) : null,
+    display ? (item.style.display = display) : null,
+    justify ? (item.style.justifyContent = justify) : null,
+    align ? (item.style.alignItems = align) : null,
+    zIndex ? (item.style.zIndex = zIndex) : null,
+    top ? (item.style.top = top) : null,
+    left ? (item.style.left = left) : null,
+    tOrigin ? (item.style.transformOrigin = tOrigin) : null,
+    margin ? (item.style.margin = margin) : null,
+    transform ? (item.style.transform = transform) : null
+  );
+}
+
 const outher = document.querySelector("#outher");
-outher.style.backgroundColor = "darkred";
-outher.style.width = "300px";
-outher.style.height = "300px";
-outher.style.borderRadius = "50%";
-outher.style.margin = "7rem 6rem";
-outher.style.display = "flex";
-outher.style.justifyContent = "center";
-outher.style.alignItems = "center";
-outher.style.transform = `rotate(180deg)`;
+
+styleItem(
+  outher,
+  "darkred",
+  "300px",
+  "300px",
+  "50%",
+  false,
+  "flex",
+  "center",
+  "center",
+  false,
+  false,
+  false,
+  false,
+  "7rem 6rem",
+  "rotate(180deg)"
+);
 
 const insider = document.querySelector("#insider");
-insider.style.backgroundColor = "white";
-insider.style.width = "285px";
-insider.style.height = "285px";
-insider.style.borderRadius = "50%";
-insider.style.position = "relative";
 
-// const dot = document.querySelector("#dot");
-// dot.style.backgroundColor = "coral";
-// dot.style.width = "20px";
-// dot.style.height = "20px";
-// dot.style.borderRadius = "50%";
-// dot.style.position = "relative";
-// dot.style.left = "139px";
-// dot.style.top = "119px";
+styleItem(
+  insider,
+  "white",
+  "285px",
+  "285px",
+  "50%",
+  "relative",
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false
+);
 
 const sayac = document.querySelector("#sayac");
-sayac.style.backgroundColor = "coral";
-sayac.style.width = "6px";
-sayac.style.height = "130px";
-sayac.style.borderRadius = "6px";
-sayac.style.position = "absolute";
-sayac.style.left = "139px";
-sayac.style.top = "115px";
-sayac.style.transformOrigin = "3px 27px";
-sayac.style.zIndex = 400;
+
+styleItem(
+  sayac,
+  "coral",
+  "6px",
+  "130px",
+  "6px",
+  "absolute",
+  false,
+  false,
+  false,
+  400,
+  "115px",
+  "139px",
+  "3px 27px",
+  false,
+  false
+);
 
 const sayacTwo = document.querySelector("#sayacTwo");
-sayacTwo.style.backgroundColor = "darkred";
-sayacTwo.style.width = "10px";
-sayacTwo.style.height = "140px";
-sayacTwo.style.borderRadius = "6px";
-sayacTwo.style.position = "absolute";
-sayacTwo.style.left = "137px";
-sayacTwo.style.top = "115px";
-sayacTwo.style.transformOrigin = "5px 27px";
-sayacTwo.style.zIndex = 200;
+
+styleItem(
+  sayacTwo,
+  "darkred",
+  "10px",
+  "140px",
+  "6px",
+  "absolute",
+  false,
+  false,
+  false,
+  200,
+  "115px",
+  "137px",
+  "5px 27px",
+  false,
+  false
+);
 
 const sayacThree = document.querySelector("#sayacThree");
-sayacThree.style.backgroundColor = "darkred";
-sayacThree.style.width = "14px";
-sayacThree.style.height = "120px";
-sayacThree.style.borderRadius = "6px";
-sayacThree.style.position = "absolute";
-sayacThree.style.zIndex = 100;
-sayacThree.style.left = "135px";
-sayacThree.style.top = "115px";
-sayacThree.style.transformOrigin = "7px 27px";
+
+styleItem(
+  sayacThree,
+  "darkred",
+  "14px",
+  "120px",
+  "6px",
+  "absolute",
+  false,
+  false,
+  false,
+  100,
+  "115px",
+  "135px",
+  "7px 27px",
+  false,
+  false
+);
 
 const center = document.querySelector("#center");
-center.style.backgroundColor = "coral";
-center.style.width = "20px";
-center.style.height = "20px";
-center.style.position = "relative";
-center.style.left = "-7px";
-center.style.top = "17px";
-center.style.borderRadius = "50%";
+
+styleItem(
+  center,
+  "coral",
+  "20px",
+  "20px",
+  "50%",
+  "relative",
+  false,
+  false,
+  false,
+  false,
+  "17px",
+  "-7px",
+  false,
+  false,
+  false
+);
+
+// position,
+// display,
+// justify,
+// align,
+// zIndex,
+// top,
+// left,
+// tOrigin,
+// margin,
+// transform
+
+// "absolute",
+// false,
+// false,
+// false,
+// 100,
+// "115px",
+// "135px",
+// "7px 27px",
+// false,
+// false
+// );
+
+function backTicks() {
+  for (let i = 0; i < 12; i++) {
+    const div = document.createElement("div");
+
+    styleItem(
+      div,
+      "black",
+      "6px",
+      "285px",
+      "6px",
+      "absolute",
+      false,
+      false,
+      false,
+      1,
+      false, // top
+      false, // left
+      false, // tOrigin
+      false, // margin
+      `rotate(${30 * (i + 1)}deg)` // transform
+    );
+
+    outher.appendChild(div);
+  }
+}
+
+backTicks();
 
 let previousSec;
 let previousMinute;
 let previousHour;
 
-function time(timestamp) {
+function time() {
   const currentDate = new Date();
 
   const minutes = currentDate.getMinutes();
@@ -107,5 +244,3 @@ function time(timestamp) {
   console.log(hours + ", " + minutes + ", " + seconds);
 }
 requestAnimationFrame(time);
-
-// time();
