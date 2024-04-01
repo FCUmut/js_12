@@ -99,7 +99,7 @@ styleItem(
   sayacTwo,
   "darkred",
   "10px",
-  "140px",
+  "150px",
   "6px",
   "absolute",
   false,
@@ -119,8 +119,8 @@ styleItem(
   sayacThree,
   "darkred",
   "14px",
-  "120px",
-  "6px",
+  "115px",
+  "14px",
   "absolute",
   false,
   false,
@@ -273,7 +273,7 @@ function time() {
   }
 
   if (previousMinute !== minutes) {
-    sayacTwo.style.transform = `rotate(${minutes * 6}deg)`;
+    sayacTwo.style.transform = `rotate(${minutes * 6 + seconds / 10}deg)`;
   }
 
   if (previousHour !== hours) {
