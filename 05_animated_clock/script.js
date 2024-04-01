@@ -99,7 +99,7 @@ styleItem(
   sayacTwo,
   "darkred",
   "10px",
-  "150px",
+  "147px",
   "6px",
   "absolute",
   false,
@@ -203,7 +203,7 @@ function backTicks() {
     div.appendChild(divIns);
     outher.appendChild(div);
   }
-  console.log(tempArr);
+
   for (let i = 0; i < 60; i++) {
     // console.log(degTwo);
     const divMini = document.createElement("div");
@@ -258,8 +258,6 @@ function backTicks() {
 backTicks();
 
 let previousSec;
-let previousMinute;
-let previousHour;
 
 function time() {
   const currentDate = new Date();
@@ -270,13 +268,7 @@ function time() {
 
   if (previousSec !== seconds) {
     sayac.style.transform = `rotate(${seconds * 6}deg)`;
-  }
-
-  if (previousMinute !== minutes) {
     sayacTwo.style.transform = `rotate(${minutes * 6 + seconds / 10}deg)`;
-  }
-
-  if (previousHour !== hours) {
     if (hours > 12) {
       let temp = hours - 12;
       sayacThree.style.transform = `rotate(${
@@ -290,8 +282,6 @@ function time() {
   }
 
   previousSec = seconds;
-  previousMinute = minutes;
-  previousHour = hours;
 
   requestAnimationFrame(time);
 }
