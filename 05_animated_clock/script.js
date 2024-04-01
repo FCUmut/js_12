@@ -57,7 +57,7 @@ const insider = document.querySelector("#insider");
 
 styleItem(
   insider,
-  "white",
+  "#f4f4f4",
   "285px",
   "285px",
   "50%",
@@ -153,52 +153,105 @@ styleItem(
   false
 );
 
-// position,
-// display,
-// justify,
-// align,
-// zIndex,
-// top,
-// left,
-// tOrigin,
-// margin,
-// transform
-
-// "absolute",
-// false,
-// false,
-// false,
-// 100,
-// "115px",
-// "135px",
-// "7px 27px",
-// false,
-// false
-// );
-
 function backTicks() {
+  let tempArr = [];
+  let degOne;
+  let degTwo;
+
   for (let i = 0; i < 12; i++) {
     const div = document.createElement("div");
-
+    degOne = 30 * (i + 1);
+    tempArr.push(degOne);
     styleItem(
       div,
       "black",
-      "6px",
-      "285px",
-      "6px",
+      "5px",
+      "250px",
+      "20px",
       "absolute",
-      false,
-      false,
-      false,
+      "flex",
+      "center",
+      "center",
       1,
       false, // top
       false, // left
       false, // tOrigin
       false, // margin
-      `rotate(${30 * (i + 1)}deg)` // transform
+      `rotate(${degOne}deg)` // transform
     );
 
+    const divIns = document.createElement("div");
+
+    styleItem(
+      divIns,
+      "#f4f4f4",
+      "10px",
+      "200px",
+      false,
+      "absolute",
+      false,
+      false,
+      false,
+      2,
+      false, // top
+      false, // left
+      false, // tOrigin
+      false, // margin
+      false // transform
+    );
+
+    div.appendChild(divIns);
     outher.appendChild(div);
+  }
+  console.log(tempArr);
+  for (let i = 0; i < 60; i++) {
+    // console.log(degTwo);
+    const divMini = document.createElement("div");
+    degTwo = 6 * (i + 1);
+    if (tempArr.includes(degTwo)) {
+      continue;
+    } else {
+      styleItem(
+        divMini,
+        "black",
+        "3px",
+        "250px",
+        "6px",
+        "absolute",
+        "flex",
+        "center",
+        "center",
+        1,
+        false, // top
+        false, // left
+        false, // tOrigin
+        false, // margin
+        `rotate(${degTwo}deg)` // transform
+      );
+
+      const divMiniIns = document.createElement("div");
+
+      styleItem(
+        divMiniIns,
+        "#f4f4f4",
+        "10px",
+        "235px",
+        false,
+        "absolute",
+        false,
+        false,
+        false,
+        2,
+        false, // top
+        false, // left
+        false, // tOrigin
+        false, // margin
+        false // transform
+      );
+
+      divMini.appendChild(divMiniIns);
+      outher.appendChild(divMini);
+    }
   }
 }
 
@@ -241,6 +294,5 @@ function time() {
   previousHour = hours;
 
   requestAnimationFrame(time);
-  console.log(hours + ", " + minutes + ", " + seconds);
 }
 requestAnimationFrame(time);
